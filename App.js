@@ -63,6 +63,6 @@ const styles = StyleSheet.create({
   foto: {
     width: 200,
     height: 200,
-    alignItems: 'center', // Correção aqui
+    alignItems: 'center', 
   },
 });
