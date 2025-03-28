@@ -15,7 +15,7 @@ export default function App () {
 
   return (
     <View style={styles.container}>
-      <Image source={{ uri: imagemPerfil }} style={styles.foto} />
+    <Image source={{ uri: imagemPerfil }} style={styles.foto} />  
       
       <TextInput
         style={styles.login}
@@ -24,12 +24,12 @@ export default function App () {
         underlineColorAndroid="transparent"
       />
 
-      <Button title="Consultar Dev" onPress={() => consultarDev(loginGithub)} />
+      <Button title="Consultar Dev" onPress={() => consultarDev(loginGithub)}  />
 
       {infoDev && (
         <>
           <Text style={styles.info}>Id: {infoDev.id}</Text>
-          <Text style={styles.info}>Nome: {infoDev.name}</Text>
+          <Text style={styles.info}>Nome: { infoDev.login}</Text>
           <Text style={styles.info}>Repositórios: {infoDev.public_repos}</Text>
           <Text style={styles.info}>Criado em: {infoDev.created_at}</Text>
           <Text style={styles.info}>Seguidores: {infoDev.followers}</Text>
@@ -45,24 +45,38 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 60,
     alignItems: 'center',
+    paddingHorizontal: 20,
+    backgroundColor: '#89a4a9',
   },
   info: {
-    marginTop: 15,
-    fontSize: 20,
+    marginTop: 20, 
+    fontSize: 28,  
+    fontWeight: '600', 
     textAlign: 'center',
+    alignItems: 'left',
+    color: '#333', 
+    backgroundColor: '#2f597e',
   },
   login: {
-    width: 280,
-    height: 40,
-    borderColor: '#000',
+    width: '100%',
+    maxWidth: 320, 
+    height: 45,  
+    borderColor: 'grey', 
     borderWidth: 1,
-    padding: 10,
+    paddingHorizontal: 15, 
+    borderRadius: 10,  
     marginTop: 20,
     marginBottom: 20,
+    backgroundColor: '#2f597e', 
   },
   foto: {
     width: 200,
     height: 200,
-    alignItems: 'center', 
+    alignItems: 'center',
+    justifyContent: 'center', 
+    backgroundColor: 'black', 
+    borderRadius: 100,  
+    overflow: 'hidden', 
+    marginBottom: 20, 
   },
 });
